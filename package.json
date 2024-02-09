@@ -2,12 +2,16 @@
   "name": "@boilerplate/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "pg:gen:client": "prisma generate --schema=./prisma/postgre/schema.prisma",
+    "pg:mig:dev": "prisma migrate dev --schema=./prisma/postgre/schema.prisma"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^10.3.2",
     "@nestjs/core": "^10.3.2",
     "@nestjs/platform-express": "^10.3.2",
+    "@prisma/client": "^5.9.1",
     "axios": "^1.6.7",
     "reflect-metadata": "^0.2.1",
     "rxjs": "^7.8.1",
@@ -38,6 +42,7 @@
     "jest-environment-node": "^29.7.0",
     "nx": "18.0.3",
     "prettier": "^3.2.5",
+    "prisma": "^5.9.1",
     "ts-jest": "^29.1.2",
     "ts-node": "10.9.2",
     "typescript": "~5.3.3",
