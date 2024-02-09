@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
+import { User } from '@prisma/postgre';
 
 import { UserService } from '@boilerplate/libs';
 
@@ -6,7 +7,7 @@ import { UserService } from '@boilerplate/libs';
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Get(':id')
-  async find(): Promise<unknown> {
-    return this.userService.find('asdfasdf');
+  async find(@Param('id') id: string): Promise<User> {
+    return this.userService.find(id);
   }
 }
