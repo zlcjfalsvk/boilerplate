@@ -17,8 +17,7 @@
     "paths": {
       "@boilerplate/libs": ["libs/src/index.ts"],
       "@prisma/postgre": ["prisma/postgre/client"]
-
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
 }
