@@ -1,12 +1,13 @@
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
 
 #[wasm_bindgen(getter_with_clone)]
 #[derive(Serialize, Deserialize)]
 pub struct User {
-    pub id: i32,
+    pub id: String,
     pub email: String,
     pub name: String,
     pub created_at: String,
@@ -15,9 +16,9 @@ pub struct User {
 #[wasm_bindgen]
 impl User {
     #[wasm_bindgen]
-    pub fn generate(id: i32, email: &str, name: &str) -> User {
+    pub fn generate(email: &str, name: &str) -> User {
         User {
-            id: id,
+            id: Uuid::new_v4().to_string(),
             email: email.to_string(),
             name: name.to_string(),
             created_at: Utc::now().to_string(),
@@ -25,9 +26,9 @@ impl User {
     }
 
     #[wasm_bindgen(constructor)]
-    pub fn new(id: i32, email: &str, name: &str) -> User {
+    pub fn new(email: &str, name: &str) -> User {
         User {
-            id: id,
+            id: Uuid::new_v4().to_string(),
             email: email.to_string(),
             name: name.to_string(),
             created_at: Utc::now().to_string(),

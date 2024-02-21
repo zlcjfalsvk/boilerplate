@@ -12,11 +12,10 @@ export class UserService {
   constructor(private readonly postgrePrismaService: PostgrePrismaService) {}
 
   async generate(email: string, name: string): Promise<User> {
-    // Todo uuid
-    const user = wasm.User.generate(1, email, name);
+    const user = wasm.User.generate(email, name);
 
     return {
-      id: user.id + '',
+      id: user.id,
       name: user.name,
       email: user.email,
       createdAt: new Date(user.created_at),
