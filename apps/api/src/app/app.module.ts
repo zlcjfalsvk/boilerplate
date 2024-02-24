@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 
 import { PrismaModule } from '@boilerplate/libs';
 
-import { UserControllerModule } from './user/user.controller.module';
+import { UsersControllerModule } from './users/users.controller.module';
 
 @Module({
-  imports: [PrismaModule.forPostgre(), UserControllerModule],
+  imports: [PrismaModule.forPostgre(), UsersControllerModule],
 })
 export class AppModule {}

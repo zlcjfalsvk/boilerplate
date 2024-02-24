@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 
 import { UserModule } from '@boilerplate/libs';
 
-import { UserController } from './user.controller';
+import { UsersController } from './users.controller';
 
 @Module({
   imports: [UserModule],
-  controllers: [UserController],
+  controllers: [UsersController],
 })
-export class UserControllerModule {}
+export class UsersControllerModule {}

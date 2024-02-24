@@ -3,8 +3,8 @@ import { User } from '@prisma/postgre';
 
 import { UserService } from '@boilerplate/libs';
 
-@Controller('user')
-export class UserController {
+@Controller('users')
+export class UsersController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
