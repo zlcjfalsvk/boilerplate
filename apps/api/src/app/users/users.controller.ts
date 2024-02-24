@@ -1,5 +1,4 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { User } from '@prisma/postgre';
 
 import { Create, Find } from './dtos';
 import { UserService } from '@boilerplate/libs';
