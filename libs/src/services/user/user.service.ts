@@ -2,9 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { User } from '@prisma/postgre';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import * as wasm from '../../../../wasm';
-
+import { wasm } from '../../index';
 import { PostgrePrismaService } from '../../configs';
 
 @Injectable()

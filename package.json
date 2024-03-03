@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "wasm:build": "wasm-pack build libs/rs --target nodejs --out-dir ../../wasm",
-    "api:build": "rm -rf dist && rm -rf wasm && npm run wasm:build && nx build api && cp wasm/rs_bg.wasm dist/apps/api",
+    "wasm:build": "wasm-pack build libs/rs --target nodejs --out-dir ../src/wasm",
+    "api:build": "rm -rf dist && rm -rf libs/src/wasm && npm run wasm:build && nx build api && cp libs/wasm/rs_bg.wasm dist/apps/api",
     "api:serve": "nx run api:build && cp wasm/rs_bg.wasm dist/apps/api && node dist/apps/api/main",
     "pg:gen:client": "prisma generate --schema=./prisma/postgre/schema.prisma",
     "pg:mig:dev": "prisma migrate dev --schema=./prisma/postgre/schema.prisma"
