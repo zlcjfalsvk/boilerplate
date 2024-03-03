@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import Joi from 'joi';
 
 import { PrismaModule } from '@boilerplate/libs';
 
 import { UsersControllerModule } from './users/users.controller.module';
-import Joi from 'joi';
 
 @Module({
   imports: [

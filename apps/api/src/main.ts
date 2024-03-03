@@ -9,11 +9,16 @@ import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import { AppModule } from './app/app.module';
+import { ErrorFilter } from './app/error.filter';
+import { ResponseInterceptor } from './app/response.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
+
+  app.useGlobalFilters(new ErrorFilter());
+  app.useGlobalInterceptors(new ResponseInterceptor());
 
   app.useGlobalPipes(new ValidationPipe());
 

@@ -1,4 +1,12 @@
-import { Body, Controller, Get, HttpStatus, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 import { UserService } from '@boilerplate/libs';
@@ -19,7 +27,11 @@ export class UsersController {
   })
   @Post()
   async create(@Body() body: Create.Body): Promise<Create.Response> {
-    return await this.userService.generate(body.email, body.name);
+    try {
+      return await this.userService.generate(body.email, body.name);
+    } catch (e) {
+      throw new HttpException(e, HttpStatus.BAD_REQUEST);
+    }
   }
 
   @ApiOperation({
@@ -31,6 +43,10 @@ export class UsersController {
   })
   @Get(':id')
   async find(@Param() param: Find.Param): Promise<Find.Response> {
-    return this.userService.find(param.id);
+    try {
+      return this.userService.find(param.id);
+    } catch (e) {
+      throw new HttpException(e, HttpStatus.BAD_REQUEST);
+    }
   }
 }
