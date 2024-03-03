@@ -3,7 +3,7 @@
  * This is only a minimal backend to get started.
  */
 
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -14,10 +14,13 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  const configService = app.get<ConfigService>(ConfigService);
-  const port = configService.get<string>('PORT') || 3000;
 
-  const mode = configService.get<boolean>('USE_DOC');
+  app.useGlobalPipes(new ValidationPipe());
+
+  const configService = app.get<ConfigService>(ConfigService);
+  const port = configService.get<string>('PORT') || 3000,
+    mode = configService.get<boolean>('USE_DOC');
+
   if (mode) {
     const config = new DocumentBuilder()
       .setTitle('Cats example')

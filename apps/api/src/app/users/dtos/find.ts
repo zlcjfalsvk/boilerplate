@@ -1,5 +1,6 @@
 import { User } from '@prisma/postgre';
 import { ApiProperty } from '@nestjs/swagger';
+import { IsUUID } from 'class-validator';
 
 import { ApiSchema } from '../../../api-schema.decorator';
 
@@ -8,6 +9,7 @@ export class Param {
   @ApiProperty({
     name: 'User Id',
   })
+  @IsUUID()
   id: string;
 }
 
