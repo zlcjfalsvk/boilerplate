@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import Joi from 'joi';
 
-import { PrismaModule } from '@boilerplate/libs';
+import { PRISMA_POSTGRE_SERVICE_TOKEN, PrismaModule } from '@boilerplate/libs';
 
 import { UsersControllerModule } from './users/users.controller.module';
 
@@ -26,7 +26,7 @@ import { UsersControllerModule } from './users/users.controller.module';
           .required(),
       }),
     }),
-    PrismaModule.forPostgre(),
+    PrismaModule.forPostgreGlobal(PRISMA_POSTGRE_SERVICE_TOKEN),
     UsersControllerModule,
   ],
 })

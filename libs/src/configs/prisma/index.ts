@@ -1,2 +1,2 @@
 export * from './prisma.module';
-export * from './postgre.prisma.service';
+export * from './prisma.postgre.service';

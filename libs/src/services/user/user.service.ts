@@ -1,14 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 
 import { User } from '@prisma/postgre';
 
-import { CUSTOM_ERROR_CODE, wasm } from '../../index';
-import { PostgrePrismaService } from '../../configs';
+import {
+  CUSTOM_ERROR_CODE,
+  PRISMA_POSTGRE_SERVICE_TOKEN,
+  wasm,
+} from '../../index';
+import { PrismaPostgreService } from '../../configs';
 import { CustomError } from '../../custom.error';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly postgrePrismaService: PostgrePrismaService) {}
+  constructor(
+    @Inject(PRISMA_POSTGRE_SERVICE_TOKEN)
+    private readonly postgrePrismaService: PrismaPostgreService,
+  ) {}
 
   async generate(email: string, name: string): Promise<User> {
     const hasUser = await this.postgrePrismaService.user.findUnique({

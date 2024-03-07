@@ -1,15 +1,25 @@
-import { DynamicModule, Module } from '@nestjs/common';
+import { DynamicModule, Module, Provider } from '@nestjs/common';
 
-import { PostgrePrismaService } from './postgre.prisma.service';
+import { PrismaPostgreService } from './prisma.postgre.service';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({})
 export class PrismaModule {
-  static forPostgre(): DynamicModule {
+  static forPostgreGlobal(token: string): DynamicModule {
+    const provider: Provider = {
+      provide: token,
+      useFactory: (configService: ConfigService) =>
+        new PrismaPostgreService(
+          <string>configService.get('POSTGRE_DATABASE_URL'),
+        ),
+      inject: [ConfigService],
+    };
     return {
       global: true,
+      imports: [ConfigModule],
       module: PrismaModule,
-      providers: [PostgrePrismaService],
-      exports: [PostgrePrismaService],
+      providers: [provider],
+      exports: [provider],
     };
   }
 }
