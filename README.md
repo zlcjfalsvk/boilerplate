@@ -47,4 +47,8 @@
   - nx 가 아니라 nestjs 만 사용한다면 custom webpack 이 가능함
 
 
-
+- 기존 Prisma 를 사용하면 relation 이용시 join 쿼리가 아닌 query 를 여러번 호출하여 relation data 를 가져오는 이슈가 있음
+  - 이를 해결하기 위해 다음과 같은 방법을 사용할 수 있음
+    - prisma `5.9.0` 이상의 버전으로 upgrade 하여 `Relation load strategies` 기능을 사용한다
+      - [Doc link](https://www.prisma.io/docs/orm/prisma-client/queries/relation-queries#relation-load-strategies-preview)
+    - [kysely](https://kysely.dev/docs/getting-started#types) 라는 query builder 모듈이 있는데 prisma 와 같이 사용할 수 있는 모듈인 [prisma-kysel](https://github.com/valtyr/prisma-kysely) 를 사용 한다
