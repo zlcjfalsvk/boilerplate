@@ -52,3 +52,7 @@
     - prisma `5.9.0` 이상의 버전으로 upgrade 하여 `Relation load strategies` 기능을 사용한다
       - [Doc link](https://www.prisma.io/docs/orm/prisma-client/queries/relation-queries#relation-load-strategies-preview)
     - [kysely](https://kysely.dev/docs/getting-started#types) 라는 query builder 모듈이 있는데 prisma 와 같이 사용할 수 있는 모듈인 [prisma-kysel](https://github.com/valtyr/prisma-kysely) 를 사용 한다
+
+  - Prisma model type 은 relation 의 key 가 정의되어 있지 않기 때문에 relation 이후 type 을 가져올 때 include 를 해야 하는데, 밑의 문서 방법 및 `Prisma.ProjectGetPayload<T>` 를 사용한 type 을 만들어도 2Depth relation 사용 시 순환참조 같은 이슈 발생  
+    - [Doc](https://www.prisma.io/docs/orm/prisma-client/type-safety/operating-against-partial-structures-of-model-types)
+    - 이후 return type 에 `as unknown as <Definition TYPE>` 형태로 강제 타입변환 시켜야 함
