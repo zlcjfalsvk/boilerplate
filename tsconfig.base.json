@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@boilerplate/libs": ["libs/src/index.ts"],
-      "@prisma/postgre": ["prisma/postgre/client"]
+      "@prisma/postgre": ["prisma/postgre/client"],
+      "@prisma/postgre/*": ["prisma/postgre/client/*"]
     },
     "types": ["wasm"]
   },
