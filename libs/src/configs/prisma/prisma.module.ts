@@ -1,7 +1,8 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 
-import { PrismaPostgreService } from './prisma.postgre.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+
+import { PrismaPostgreService } from './prisma.postgre.service';
 
 @Module({})
 export class PrismaModule {
