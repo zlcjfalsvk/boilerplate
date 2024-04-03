@@ -1,5 +1,5 @@
-
 const { NxWebpackPlugin } = require('@nx/webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const { join } = require('path');
 
 module.exports = {
@@ -12,10 +12,17 @@ module.exports = {
       compiler: 'tsc',
       main: './src/main.ts',
       tsConfig: './tsconfig.app.json',
-      assets: ["./src/assets"],
+      assets: ['./src/assets'],
       optimization: false,
       outputHashing: 'none',
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: '../../libs/src/wasm/rs_bg.wasm',
+          to: '.',
+        },
+      ],
+    }),
   ],
 };
-
