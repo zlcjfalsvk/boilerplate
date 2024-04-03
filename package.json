@@ -5,7 +5,7 @@
   "scripts": {
     "wasm:build": "wasm-pack build libs/rs --target nodejs --out-dir ../src/wasm",
     "api:serve": "nx run api:build && cp libs/src/wasm/rs_bg.wasm dist/apps/api && node dist/apps/api/main",
-    "api:build:wasm": "rm -rf dist && rm -rf libs/src/wasm && npm run wasm:build && nx build api && cp libs/wasm/rs_bg.wasm dist/apps/api",
+    "api:build:wasm": "rm -rf dist && rm -rf libs/src/wasm && npm run wasm:build && nx build api && cp libs/src/wasm/rs_bg.wasm dist/apps/api",
     "pg:gen:client": "prisma generate --schema=./prisma/postgre/schema.prisma",
     "pg:mig:dev": "prisma migrate dev --schema=./prisma/postgre/schema.prisma"
   },
