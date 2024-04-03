@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { PrismaPostgreService } from '@boilerplate/libs';
-import { UserService } from '@boilerplate/libs';
-
+import { PrismaPostgreService } from '@boilerplate/configs';
 import { PRISMA_POSTGRE_SERVICE_TOKEN } from '@boilerplate/libs';
+
+import { UserService } from './user.service';
 
 const host = process.env['POSTGRE_DATABASE_URL'] || '';
 describe('UserService', () => {

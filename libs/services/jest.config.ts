@@ -8,4 +8,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/services',
+  moduleNameMapper: {
+    '^@prisma/postgre(|/.*)$': '<rootDir>/../../prisma/postgre/client/$1',
+  },
 };
