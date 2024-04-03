@@ -15,6 +15,7 @@ module.exports = {
       assets: ['./src/assets'],
       optimization: false,
       outputHashing: 'none',
+      sourceMap: true,
     }),
     new CopyPlugin({
       patterns: [
