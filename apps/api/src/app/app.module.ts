@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import Joi from 'joi';
 
-import { PRISMA_POSTGRE_SERVICE_TOKEN, PrismaModule } from '@boilerplate/libs';
+import { PrismaModule } from '@boilerplate/configs';
+import { PRISMA_POSTGRE_SERVICE_TOKEN } from '@boilerplate/libs';
 
 import { UsersControllerModule } from './users/users.controller.module';
 

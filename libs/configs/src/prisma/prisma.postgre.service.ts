@@ -3,7 +3,7 @@ import * as process from 'process';
 
 // nx 에서 jest preset 을 설정하는데 nx lib 가 아닌 폴더 에서 Client 를 가져와 path 사용 시 jest 에서 읽어올 수 없음
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { Prisma, PrismaClient } from '../../../../prisma/postgre/client';
+import { Prisma, PrismaClient } from '@prisma/postgre';
 
 @Injectable()
 export class PrismaPostgreService

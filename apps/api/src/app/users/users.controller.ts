@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-import { UserService } from '@boilerplate/libs';
+import { UserService } from '@boilerplate/services';
 
 import { Create, Find } from './dtos';
 

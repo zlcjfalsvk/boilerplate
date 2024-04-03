@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { UserModule } from '@boilerplate/libs';
+import { UserModule } from '@boilerplate/services';
 
 import { UsersController } from './users.controller';
 

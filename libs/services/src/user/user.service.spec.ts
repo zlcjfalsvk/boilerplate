@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaPostgreService } from '@boilerplate/libs';
 import { UserService } from '@boilerplate/libs';
 
-import { PRISMA_POSTGRE_SERVICE_TOKEN } from '../../consts';
+import { PRISMA_POSTGRE_SERVICE_TOKEN } from '@boilerplate/libs';
 
 const host = process.env['POSTGRE_DATABASE_URL'] || '';
 describe('UserService', () => {

@@ -4,11 +4,11 @@ import { User } from '@prisma/postgre';
 
 import {
   CUSTOM_ERROR_CODE,
+  CustomError,
   PRISMA_POSTGRE_SERVICE_TOKEN,
   wasm,
-} from '../../index';
-import { PrismaPostgreService } from '../../configs';
-import { CustomError } from '../../custom.error';
+} from '@boilerplate/libs';
+import { PrismaPostgreService } from '@boilerplate/configs';
 
 @Injectable()
 export class UserService {
