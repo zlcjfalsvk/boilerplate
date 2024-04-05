@@ -1,24 +1,24 @@
 {
-  "name": "api",
+  "name": "rest",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/api/src",
+  "sourceRoot": "apps/rest/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "api:build"
+        "buildTarget": "rest:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "api:build:development"
+          "buildTarget": "rest:build:development"
         },
         "production": {
-          "buildTarget": "api:build:production"
+          "buildTarget": "rest:build:production"
         }
       }
     }
-  },
-  "tags": []
+  }
 }
