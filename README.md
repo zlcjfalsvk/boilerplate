@@ -16,6 +16,9 @@
     - cargo & rustc 를 설치할 수 있다
     - +) [rustfmt](https://github.com/rust-lang/rustfmt)(rust formatter), [clippy](https://github.com/rust-lang/rust-clippy)(linter)
 - Run Command `npm install`
+- Nx Console for IDE
+  - [Vscode](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+  - [Intellij](https://plugins.jetbrains.com/plugin/21060-nx-console)
 
 ### Run
 
@@ -31,6 +34,40 @@
 
 - rust 의 struct 를 Wasm 으로 생성 이후 호출할 때 객체 자체를 호출하면 메모리 주소를 가르킨다
   - [Ref](https://stackoverflow.com/questions/69694292/how-to-use-exported-struct-in-js-file)
+
+### Structure
+
+Basically One-way-Dependency
+
+
+<table>
+<tr>
+<td style="width: 65%"><img src="assets/structure.jpg"></td>
+<td>
+
+- Libs
+  - config
+  - domain
+    - Domain Service
+      - Due to the adoption of Prisma by default, there is no Repository, but it can be freely created when using TypeORM or similar tools.
+  - service
+    - Business Service, You can compose it by combining Domain Service
+  - src
+    - WASM Code
+    - Utils
+    - Common library
+    - Else...
+- Apps
+  - You can compose it by combining Service And Domain
+- Prisma
+  - Domain Schema
+
+</td>
+</tr>
+</table>
+
+
+
 ---
 ### Debug
 Debug mode 를 활성화 하기 위해 각 App 의 webpack 의 NxWebpackPlugin 함수 option 으로 sourceMap 옵션 `true` 설정 해야 함
