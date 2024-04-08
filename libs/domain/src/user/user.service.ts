@@ -8,7 +8,7 @@ import {
   PRISMA_POSTGRE_SERVICE_TOKEN,
   wasm,
 } from '@boilerplate/libs';
-import { PrismaPostgreService } from '@boilerplate/configs';
+import { PrismaPostgreService } from '@boilerplate/config';
 
 @Injectable()
 export class UserService {

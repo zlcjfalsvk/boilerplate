@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@boilerplate/configs": ["libs/configs/src/index.ts"],
+      "@boilerplate/config": ["libs/config/src/index.ts"],
       "@boilerplate/domain": ["libs/domain/src/index.ts"],
       "@boilerplate/libs": ["libs/src/index.ts"],
       "@prisma/postgre": ["prisma/postgre/client"],

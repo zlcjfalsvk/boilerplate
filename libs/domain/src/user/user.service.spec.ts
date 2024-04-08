@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { PrismaPostgreService } from '@boilerplate/configs';
+import { PrismaPostgreService } from '@boilerplate/config';
 import { PRISMA_POSTGRE_SERVICE_TOKEN } from '@boilerplate/libs';
 
 import { UserService } from './user.service';
