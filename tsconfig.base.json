@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@boilerplate/configs": ["libs/configs/src/index.ts"],
+      "@boilerplate/domain": ["libs/domain/src/index.ts"],
       "@boilerplate/libs": ["libs/src/index.ts"],
-      "@boilerplate/services": ["libs/services/src/index.ts"],
       "@prisma/postgre": ["prisma/postgre/client"],
       "@prisma/postgre/*": ["prisma/postgre/client/*"]
     },
