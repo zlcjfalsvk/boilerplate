@@ -20,9 +20,10 @@
       "@boilerplate/libs": ["libs/src/index.ts"],
       "@boilerplate/service": ["libs/service/src/index.ts"],
       "@prisma/postgre": ["prisma/postgre/client"],
-      "@prisma/postgre/*": ["prisma/postgre/client/*"]
+      "@prisma/postgre/*": ["prisma/postgre/client/*"],
+      "@wasm": ["libs/src/wasm"],
+      "@wasm/*": ["libs/src/wasm/*"]
     },
-    "types": ["wasm"]
   },
   "exclude": ["node_modules", "tmp"]
 }

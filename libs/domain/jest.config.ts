@@ -10,5 +10,6 @@ export default {
   coverageDirectory: '../../coverage/libs/domain',
   moduleNameMapper: {
     '^@prisma/postgre(|/.*)$': '<rootDir>/../../prisma/postgre/client/$1',
+    '^@wasm(|/.*)$': '<rootDir>/../src/wasm/$1',
   },
 };
