@@ -1,7 +1,7 @@
 {
-  "name": "rest",
+  "name": "http",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/rest/src",
+  "sourceRoot": "apps/http/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -9,14 +9,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "rest:build"
+        "buildTarget": "http:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "rest:build:development"
+          "buildTarget": "http:build:development"
         },
         "production": {
-          "buildTarget": "rest:build:production"
+          "buildTarget": "http:build:production"
         }
       }
     }

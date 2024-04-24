@@ -1,14 +1,14 @@
 {
-  "name": "rest-e2e",
+  "name": "http-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "implicitDependencies": ["rest"],
+  "implicitDependencies": ["http"],
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
-        "jestConfig": "apps/rest-e2e/jest.config.ts",
+        "jestConfig": "apps/http-e2e/jest.config.ts",
         "passWithNoTests": true
       }
     }
