@@ -2,10 +2,7 @@ import { User } from '@prisma/postgre';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsUUID } from 'class-validator';
 
-import { ApiSchema } from '../../../api-schema.decorator';
-
-@ApiSchema({ name: 'UsersFindBodyDto' })
-export class Param {
+export class UsersFindParamDto {
   @ApiProperty({
     name: 'User Id',
   })
@@ -13,8 +10,7 @@ export class Param {
   id: string;
 }
 
-@ApiSchema({ name: 'UsersFindResponseDto' })
-export class Response implements User {
+export class UsersFindResponseDto implements User {
   @ApiProperty()
   id: string;
   @ApiProperty()
