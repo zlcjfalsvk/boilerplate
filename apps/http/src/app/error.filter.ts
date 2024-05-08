@@ -15,12 +15,10 @@ export class ErrorFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
 
-    const err = exception.getResponse();
-
-    if (err instanceof CustomError) {
-      response.status(err.code || HttpStatus.BAD_REQUEST).json({
-        statusCode: err.custom_code,
-        msg: err.message,
+    if (exception instanceof CustomError) {
+      response.status(exception.code || HttpStatus.BAD_REQUEST).json({
+        statusCode: exception.custom_code,
+        msg: exception.message,
         data: null,
       });
     }
