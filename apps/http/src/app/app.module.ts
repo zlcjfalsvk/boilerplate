@@ -6,6 +6,7 @@ import { PrismaModule } from '@boilerplate/config';
 import { PRISMA_POSTGRE_SERVICE_TOKEN } from '@boilerplate/libs';
 
 import { UsersControllerModule } from './users/users.controller.module';
+import { AuthControllerModule } from './auth/auth.controller.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { UsersControllerModule } from './users/users.controller.module';
     }),
     PrismaModule.forPostgreGlobal(PRISMA_POSTGRE_SERVICE_TOKEN),
     UsersControllerModule,
+    AuthControllerModule,
   ],
 })
 export class AppModule {}
