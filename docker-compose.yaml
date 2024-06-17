@@ -9,3 +9,8 @@ services:
       POSTGRES_PASSWORD: cheolcheol
     ports:
       - 5432:5432
+  # redis fork
+  valkey:
+    image: valkey/valkey:7
+    ports:
+      - 6379:6379
